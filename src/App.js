@@ -1,11 +1,12 @@
 import Pomodoro from "./Components/Pomodoro";
-import UpdateRest from "./Components/UpdateRest";
+import UpdateBreak from "./Components/UpdateBreak";
 import UpdateTime from "./Components/UpdateTime";
+import './Styles/App.css'
 
 const App = () => {
     return(
-        <div id='appContainer'>
-          <UpdateRest />
+        <div id='app-container'>
+          <UpdateBreak />
           <UpdateTime/>
           <Pomodoro />
         </div>
