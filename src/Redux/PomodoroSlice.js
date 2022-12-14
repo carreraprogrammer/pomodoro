@@ -7,7 +7,7 @@ const defaultState = {
   session: 25,
 }
 
-const pomodoroSlice = createSlice (
+export const pomodoroSlice = createSlice (
  { 
   name: 'Pomodoro/getTimes',
   defaultState,
@@ -27,3 +27,6 @@ const pomodoroSlice = createSlice (
   }
 }
 )
+
+export default pomodoroSlice.reducer;
+export const { increment, decrement, restart } =eventSlice.actions
