@@ -2,9 +2,8 @@
 import  { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  time: 25,
-  break: 5,
   session: 25,
+  break: 5,
 }
 
 export const pomodoroSlice = createSlice (
@@ -20,6 +19,14 @@ export const pomodoroSlice = createSlice (
       const newState = {...state, break: state.break -1};
       return newState
     },
+    incrementSession(state){
+      const newState = {...state, session: state.break + 1};
+      return newState
+    },
+    decrementSession(state){
+      const newState = {...state, session: state.break -1};
+      return newState
+    },
     restart(state){
       const newState = {...state}
       return newState
@@ -29,4 +36,4 @@ export const pomodoroSlice = createSlice (
 )
 
 export default pomodoroSlice.reducer;
-export const { incrementBreak, decrementBreak, restart } = pomodoroSlice.actions
+export const { incrementBreak, decrementBreak, incrementSession, decrementSession, restart } = pomodoroSlice.actions
