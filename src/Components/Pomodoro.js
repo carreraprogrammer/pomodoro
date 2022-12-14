@@ -1,6 +1,6 @@
 const Pomodoro = () => {
     return (
-        <h1 >This is the pomodoro component</h1>
+        <h1 id='timer-label'>Pomodoro</h1>
     )
 }
 
