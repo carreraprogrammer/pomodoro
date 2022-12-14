@@ -29,4 +29,4 @@ export const pomodoroSlice = createSlice (
 )
 
 export default pomodoroSlice.reducer;
-export const { increment, decrement, restart } =eventSlice.actions
+export const { increment, decrement, restart } = pomodoroSlice.actions

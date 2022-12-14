@@ -1,11 +1,12 @@
-import { combineReducers, combineReducers, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import pomodoroSlice from './PomodoroSlice'
 
-const combineReducers = combineReducers({
+const pomodoroReducers = combineReducers({
   Pomodoro: pomodoroSlice,
 })
+
 const store = configureStore({
- reducer: eventsReducers,
+ reducer: pomodoroReducers,
 })
 
 export default store;
