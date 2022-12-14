@@ -12,12 +12,12 @@ export const pomodoroSlice = createSlice (
   name: 'Pomodoro/getTimes',
   initialState,
   reducers: {
-    increment(state, { payload }){
-      const newState = {...state, payload: state.payload + 1};
+    incrementBreak(state){
+      const newState = {...state, break: state.break + 1};
       return newState
     },
-    decrement(state, { payload }){
-      const newState = {...state, payload: state.payload -1};
+    decrementBreak(state){
+      const newState = {...state, break: state.break -1};
       return newState
     },
     restart(state){
@@ -29,4 +29,4 @@ export const pomodoroSlice = createSlice (
 )
 
 export default pomodoroSlice.reducer;
-export const { increment, decrement, restart } = pomodoroSlice.actions
+export const { incrementBreak, decrementBreak, restart } = pomodoroSlice.actions
