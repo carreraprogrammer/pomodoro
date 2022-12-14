@@ -20,11 +20,11 @@ export const pomodoroSlice = createSlice (
       return newState
     },
     incrementSession(state){
-      const newState = {...state, session: state.break + 1};
+      const newState = {...state, session: state.session + 1};
       return newState
     },
     decrementSession(state){
-      const newState = {...state, session: state.break -1};
+      const newState = {...state, session: state.session -1};
       return newState
     },
     restart(state){
