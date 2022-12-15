@@ -5,6 +5,7 @@ const initialState = {
   session: 5,
   break: 5,
   seconds: 0,
+  running: true,
 }
 
 export const pomodoroSlice = createSlice (
@@ -38,10 +39,17 @@ export const pomodoroSlice = createSlice (
           state.session -= 1;
           state.seconds = 59;
       }
-  }
+      if(state.running === false){
+        return {...state, running: true}
+        
+      }
+    },
+   changeRunning: (state) => {
+      return {...state, running: !state.running}
+   }
   }
   }
 )
 
 export default pomodoroSlice.reducer;
-export const { incrementBreak, decrementBreak, incrementSession, decrementSession, restart, startTimer} = pomodoroSlice.actions
+export const { incrementBreak, decrementBreak, incrementSession, decrementSession, restart, startTimer, changeRunning} = pomodoroSlice.actions

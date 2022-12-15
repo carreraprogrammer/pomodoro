@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { startTimer } from '../Redux/PomodoroSlice';
+import { startTimer, changeRunning } from '../Redux/PomodoroSlice';
 
 const Pomodoro = () => {
     const dispatch = useDispatch();
     const session = useSelector(state => state.Pomodoro.session);
     const seconds = useSelector(state => state.Pomodoro.seconds);
+    const running = useSelector(state => state.Pomodoro.running);
 
     const start = () => {
         if (session > 0) {
@@ -18,7 +19,7 @@ const Pomodoro = () => {
         <h1 id='timer-label'>Pomodoro</h1>
         <h2 id='time-left'>{session}:{seconds} </h2>
         <button id='start_stop' onClick={start}>Start</button>
-        <button id='reset'>Reset</button>
+        <button id='reset' onClick={() => {dispatch(changeRunning()); console.log(running)}}>Stop</button>
       </div>
     );
 };
