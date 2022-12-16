@@ -5,7 +5,7 @@ const UpdateBreak= () => {
 
   const dispatch = useDispatch()
 
-  const breakLength = useSelector((state) => state.Pomodoro.break);
+  const breakLength = useSelector((state) => state.Pomodoro.breakTime);
 
   console.log(breakLength)
   return (
