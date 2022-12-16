@@ -42,7 +42,7 @@ export const pomodoroSlice = createSlice (
 
       if (newState.seconds < 0 && newState.session > 0) {
           newState.session -= 1;
-          newState.seconds = 4;
+          newState.seconds = 59;
       }else if(newState.session === 0 && newState.seconds  < 0 && newState.name === "TIME TO WORK!"){
         return {...newState, name: "IT'S TIME TO REST!", session: newState.initBreak, seconds: 0, counter: newState.counter + 1}
       }else if(newState.session === 0 && newState.seconds < 0 && newState.name === "IT'S TIME TO REST!") {
