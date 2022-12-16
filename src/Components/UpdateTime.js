@@ -10,9 +10,11 @@ const UpdateTime = () => {
     return (
       <div id='session-container'>
         <h1 id='session-label'>Session Length</h1>
-        <button id='session-increment' onClick={() => dispatch(incrementSession())}><BiUpArrow /></button>
-        <h2 id='session-length'>{session}</h2>
-        <button id='session-decrement' onClick={() => dispatch(decrementSession())}><BiDownArrow /></button>
+        <div id='session-buttons'>
+          <button id='session-increment' onClick={() => dispatch(incrementSession())}><BiUpArrow style={{marginTop: '5px'}}/></button>
+          <h2 id='session-length'>{session}</h2>
+          <button id='session-decrement' onClick={() => dispatch(decrementSession())}><BiDownArrow style={{marginTop: '5px'}}/></button>
+        </div>
       </div>
     )
 }

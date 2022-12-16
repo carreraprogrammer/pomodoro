@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300&family=Raleway:wght@400;500;600;700;900&display=swap');
+
 /* RESET */ 
 
 *,
@@ -19,6 +21,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
 }
 
 #app-container{
@@ -27,7 +34,7 @@
   justify-content: center;
   width: 60%;
   height: 70%;
-  border: 1px solid red;
+  border: 2px solid black;
 }
 
 #controlContainer {
@@ -35,7 +42,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid blue;
   flex-basis: 50%;
   height: 100%;
 }
@@ -66,4 +72,89 @@
   border: 1px solid black;
   flex-basis: 50%;
   width: 100%;
+}
+
+#break-buttons, #session-buttons {
+ width: 30%;
+ display: flex;
+ justify-content: space-around;
+ margin-top: 24px;
+}
+
+#break-increment, 
+#break-decrement, 
+#session-increment, 
+#session-decrement{
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid red;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+#break-increment:hover, 
+#break-decrement:hover, 
+#session-increment:hover, 
+#session-decrement:hover {
+  background-color: rgba(255, 0, 0, 0.256);
+  color: white;
+  transform: scale(1.05)
+}
+
+#break-increment:active, 
+#break-decrement:active, 
+#session-increment:active, 
+#session-decrement:active {
+  color: red;
+  font-weight: bold;
+}
+
+#pomodoro-container {
+  border: 2px solid black;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#time-left {
+  font-size: 3rem;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+#pomodoro-buttons {
+  margin-bottom: 24px;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#pomodoro-buttons > button {
+  width: 80px;
+  height: 50px;
+  cursor: pointer;
+  border: 2px solid red;
+  font-size: 1.2rem;
+}
+
+#pomodoro-buttons > button:hover {
+  background-color: rgba(255, 0, 0, 0.256);
+  color: white;
+  transform: scale(1.05)
+}
+
+#tomato-container{
+  background-color: rgba(255, 0, 0, 0.097);
+  height: 50px;
+  width: 80%;
+  margin: 24px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
 }

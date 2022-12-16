@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { startTimer, restartPomodoro } from '../Redux/PomodoroSlice';
+import { GiTomato } from 'react-icons/gi';
 
 const Pomodoro = () => {
     const dispatch = useDispatch();
-    let {session, seconds, name } = useSelector(state => state.Pomodoro);
+    let {session, seconds, name, counter} = useSelector(state => state.Pomodoro);
   
     const [running, setRunning] = useState(false);
 
@@ -38,6 +39,12 @@ const Pomodoro = () => {
   
     return (
       <div id="pomodoro-container">
+        <h1>My sessions</h1>
+        <div id='tomato-container'>
+          {[...Array(counter)].map((_, i) => (
+              <GiTomato style={{color: 'red'}}/>
+          ))}
+        </div>
         <h1 id="timer-label">Pomodoro</h1>
         <h2 id="time-left" >
           {session}:{seconds < 0 && session === 0 ? 0 : seconds === 0 ? seconds + '0' : seconds > 10 ? seconds : '0' + seconds}{" "}
@@ -55,7 +62,7 @@ const Pomodoro = () => {
            </button>
            <audio id="beep" src="https://www.pacdv.com/sounds/interface_sound_effects/sound10.mp3" type="audio/mp3" ref={audioRef}></audio>
         </div>
-        <h1>{name}</h1>
+        <h3>{name}</h3>
       </div>
     );
   };  

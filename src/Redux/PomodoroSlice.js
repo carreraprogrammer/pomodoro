@@ -9,7 +9,8 @@ const initialState = {
   initBreak: 1,
   seconds: 0,
   running: false,
-  name: 'TIME TO WORK',
+  name: 'TIME TO WORK!',
+  counter: 0,
 }
 
 export const pomodoroSlice = createSlice (
@@ -42,17 +43,17 @@ export const pomodoroSlice = createSlice (
       if (newState.seconds < 0 && newState.session > 0) {
           newState.session -= 1;
           newState.seconds = 4;
-      }else if(newState.session === 0 && newState.seconds  < 0 > 0 && newState.name === "TIME TO WORK"){
-        return {...newState, name: "IT'S TIME TO REST", session: newState.initBreak, seconds: 0}
-      }else if(newState.session === 0 && newState.seconds < 0 && newState.name === "IT'S TIME TO REST") {
-        return {...newState, name: "TIME TO WORK", session: newState.initSession, seconds: 0}
+      }else if(newState.session === 0 && newState.seconds  < 0 > 0 && newState.name === "TIME TO WORK!"){
+        return {...newState, name: "IT'S TIME TO REST!", session: newState.initBreak, seconds: 0, counter: newState.counter + 1}
+      }else if(newState.session === 0 && newState.seconds < 0 && newState.name === "IT'S TIME TO REST!") {
+        return {...newState, name: "TIME TO WORK!", session: newState.initSession, seconds: 0}
       }else {
         return newState
       }
       return newState;
     },
     restartPomodoro(state) {
-      return {...state, session: state.initSession, seconds: 0, name: 'TIME TO WORK'};
+      return {...state, session: state.initSession, seconds: 0, name: 'TIME TO WORK!', counter: 0};
     },
     changeRunning(state) {
       const newState = {...state};

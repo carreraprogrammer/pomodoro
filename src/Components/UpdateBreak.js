@@ -13,9 +13,11 @@ const UpdateBreak= () => {
   return (
     <div id='break-container'>
       <h1 id='break-label'>Break Length</h1>
-      <button id='break-increment' onClick={() => {dispatch(incrementBreak())}}><BiUpArrow /></button>
-      <h2 id='break-length'>{breakLength}</h2>
-      <button id='break-decrement' onClick={() => {dispatch(decrementBreak())}}><BiDownArrow /></button>
+      <div id='break-buttons'>
+        <button id='break-increment' onClick={() => {dispatch(incrementBreak())}}><BiUpArrow style={{marginTop: '5px'}}/></button>
+        <h2 id='break-length'>{breakLength}</h2>
+        <button id='break-decrement' onClick={() => {dispatch(decrementBreak())}}><BiDownArrow style={{marginTop: '5px'}} /></button>
+      </div>
     </div>
   )
 }
