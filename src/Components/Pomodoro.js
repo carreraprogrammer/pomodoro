@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { startTimer } from '../Redux/PomodoroSlice';
+import { startTimer, restartPomodoro } from '../Redux/PomodoroSlice';
 
 const Pomodoro = () => {
     const dispatch = useDispatch();
@@ -36,12 +36,17 @@ const Pomodoro = () => {
           {session}:{seconds < 0 && session === 0 ? 0 : seconds}{" "}
         </h2>
         {/* utiliza el estado local para controlar si el intervalo está en ejecución */}
-        <button id="start_stop" onClick={() => setRunning(true)}>
-          Start
-        </button>
-        <button id="reset" onClick={() => setRunning(false)}>
-          Stop
-        </button>
+        <div id='pomodoro-buttons'>
+           <button id="start_stop" onClick={() => setRunning(true)}>
+             Start
+           </button>
+           <button id="reset" onClick={() => setRunning(false)}>
+             Stop
+           </button>
+           <button onClick={()=>{dispatch(restartPomodoro()); setRunning(false)}}>
+             Restart
+           </button>
+        </div>
         <h1>{name}</h1>
       </div>
     );

@@ -49,8 +49,8 @@ export const pomodoroSlice = createSlice (
       }
       return newState;
     },
-    stopTimer(state) {
-      return {...state};
+    restartPomodoro(state) {
+      return {...state, session: state.initSession, seconds: 0, name: 'TIME TO WORK'};
     },
     changeRunning(state) {
       const newState = {...state};
@@ -62,4 +62,4 @@ export const pomodoroSlice = createSlice (
 )
 
 export default pomodoroSlice.reducer;
-export const { incrementBreak, decrementBreak, incrementSession, decrementSession, startTimer, stopTimer, changeRunning,  } = pomodoroSlice.actions;
+export const { incrementBreak, decrementBreak, incrementSession, decrementSession, startTimer, restartPomodoro, changeRunning,  } = pomodoroSlice.actions;

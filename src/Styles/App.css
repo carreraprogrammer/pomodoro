@@ -20,3 +20,50 @@
   align-items: center;
   justify-content: center;
 }
+
+#app-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 70%;
+  border: 1px solid red;
+}
+
+#controlContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid blue;
+  flex-basis: 50%;
+  height: 100%;
+}
+
+#pomodoro-container {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#break-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  flex-basis: 50%;
+  width: 100%;
+}
+
+#session-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  flex-basis: 50%;
+  width: 100%;
+}

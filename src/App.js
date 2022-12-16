@@ -9,8 +9,10 @@ const App = () => {
     return(
       <Provider store={store}>
         <div id='app-container'>
+        <div id='controlContainer'>
           <UpdateBreak />
           <UpdateTime/>
+        </div>
           <Pomodoro />
         </div>
       </Provider>
