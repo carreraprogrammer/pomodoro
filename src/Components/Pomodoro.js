@@ -31,7 +31,7 @@ const Pomodoro = () => {
       <div id="pomodoro-container">
         <h1 id="timer-label">Pomodoro</h1>
         <h2 id="time-left">
-          {session}:{seconds < 0 && session === 0 ? 0 : seconds}{" "}
+          {session}:{seconds < 0 && session === 0 ? 0 : seconds === 0 ? seconds + '0' : seconds > 10 ? seconds : '0' + seconds}{" "}
         </h2>
         {/* utiliza el estado local para controlar si el intervalo está en ejecución */}
         <div id='pomodoro-buttons'>
