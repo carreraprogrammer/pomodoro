@@ -12,6 +12,7 @@ const Pomodoro = () => {
     // utiliza una variable para almacenar el identificador del intervalo
   
     const intervalRef = useRef();
+    const audioRef = useRef();
 
     useEffect(() => {
       if (running && session >= 0 && seconds >= 0) {
@@ -19,18 +20,26 @@ const Pomodoro = () => {
         intervalRef.current = setInterval(() => {
           dispatch(startTimer());
         }, 1000);
-      } else {
+      }else{
         // utiliza la referencia para cancelar el intervalo
         clearInterval(intervalRef.current);
       }
+    }, [running, intervalRef, audioRef]);
 
-    }, [running, intervalRef ]);
-  
+    useEffect(() => {
+        // ...
+    
+        // check if session and seconds are 0
+        if (session === 0 && seconds === 0) {
+          // play the sound
+          audioRef.current.play();
+        }
+      }, [session, seconds]);
   
     return (
       <div id="pomodoro-container">
         <h1 id="timer-label">Pomodoro</h1>
-        <h2 id="time-left">
+        <h2 id="time-left" >
           {session}:{seconds < 0 && session === 0 ? 0 : seconds === 0 ? seconds + '0' : seconds > 10 ? seconds : '0' + seconds}{" "}
         </h2>
         {/* utiliza el estado local para controlar si el intervalo está en ejecución */}
@@ -44,6 +53,7 @@ const Pomodoro = () => {
            <button onClick={()=>{dispatch(restartPomodoro()); setRunning(false)}}>
              Restart
            </button>
+           <audio id="beep" src="https://www.pacdv.com/sounds/interface_sound_effects/sound10.mp3" type="audio/mp3" ref={audioRef}></audio>
         </div>
         <h1>{name}</h1>
       </div>
