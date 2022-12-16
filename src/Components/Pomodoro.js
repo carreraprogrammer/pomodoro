@@ -25,7 +25,8 @@ const Pomodoro = () => {
         // utiliza la referencia para cancelar el intervalo
         clearInterval(intervalRef.current);
       }
-    }, [running, intervalRef, audioRef]);
+    // eslint-disable-next-line
+    }, [running, intervalRef, audioRef]); 
 
     useEffect(() => {
         // ...
