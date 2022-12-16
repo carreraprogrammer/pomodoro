@@ -23,9 +23,7 @@ const Pomodoro = () => {
         // utiliza la referencia para cancelar el intervalo
         clearInterval(intervalRef.current);
       }
-      if(name === "IT'S TIME TO REST"){
 
-      }
     }, [running, intervalRef ]);
   
   

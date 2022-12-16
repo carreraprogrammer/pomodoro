@@ -22,16 +22,18 @@ export const pomodoroSlice = createSlice (
       return newState
     },
     decrementBreak(state){
-      const newState = {...state, breakTime: state.breakTime -1, initBreak: state.breakTime - 1};
-      return newState
+      if(state.initBreak >= 2)
+      {const newState = {...state, breakTime: state.breakTime -1, initBreak: state.breakTime - 1};
+      return newState}
     },
     incrementSession(state){
       const newState = {...state, session: state.session + 1, initSession: state.session + 1};
       return newState
     },
     decrementSession(state){
-      const newState = {...state, session: state.session -1, initSession: state.session - 1};
-      return newState
+      if(state.initSession >= 2)
+      {const newState = {...state, session: state.session -1, initSession: state.session - 1};
+      return newState}
     },
     startTimer(state) {
       const newState = {...state};
@@ -40,10 +42,10 @@ export const pomodoroSlice = createSlice (
       if (newState.seconds < 0 && newState.session > 0) {
           newState.session -= 1;
           newState.seconds = 5;
-      }else if(newState.session === 0 && newState.seconds === 0 && newState.name === "TIME TO WORK"){
-        return {...newState, name: "IT'S TIME TO REST", session: newState.initBreak}
-      }else if(newState.session === 0 && newState.seconds === 0 && newState.name === "IT'S TIME TO REST") {
-        return {...newState, name: "TIME TO WORK", session: newState.initSession}
+      }else if(newState.session === 0 && newState.seconds  < 0 > 0 && newState.name === "TIME TO WORK"){
+        return {...newState, name: "IT'S TIME TO REST", session: newState.initBreak, seconds: 0}
+      }else if(newState.session === 0 && newState.seconds < 0 && newState.name === "IT'S TIME TO REST") {
+        return {...newState, name: "TIME TO WORK", session: newState.initSession, seconds: 0}
       }else {
         return newState
       }

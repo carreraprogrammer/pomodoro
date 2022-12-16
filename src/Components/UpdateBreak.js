@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { incrementBreak, decrementBreak} from  '../Redux/PomodoroSlice'
+import { BiUpArrow } from 'react-icons/bi'
+import { BiDownArrow } from 'react-icons/bi'
 
 const UpdateBreak= () => {
 
@@ -11,9 +13,9 @@ const UpdateBreak= () => {
   return (
     <div id='break-container'>
       <h1 id='break-label'>Break Length</h1>
-      <button id='break-increment' onClick={() => {dispatch(incrementBreak())}}>Increment</button>
+      <button id='break-increment' onClick={() => {dispatch(incrementBreak())}}><BiUpArrow /></button>
       <h2 id='break-length'>{breakLength}</h2>
-      <button id='break-decrement' onClick={() => {dispatch(decrementBreak())}}>Decrement </button>
+      <button id='break-decrement' onClick={() => {dispatch(decrementBreak())}}><BiDownArrow /></button>
     </div>
   )
 }
