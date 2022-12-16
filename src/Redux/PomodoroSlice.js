@@ -3,10 +3,13 @@
 import  { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  session: 5,
-  breakTime: 5,
+  session: 2,
+  breakTime: 1,
+  initSession: 2,
+  initBreak: 1,
   seconds: 0,
   running: false,
+  name: 'TIME TO WORK',
 }
 
 export const pomodoroSlice = createSlice (
@@ -15,19 +18,19 @@ export const pomodoroSlice = createSlice (
   initialState,
   reducers: {
     incrementBreak(state){
-      const newState = {...state, breakTime: state.breakTime + 1};
+      const newState = {...state, breakTime: state.breakTime + 1, initBreak: state.breakTime +1};
       return newState
     },
     decrementBreak(state){
-      const newState = {...state, breakTime: state.breakTime -1};
+      const newState = {...state, breakTime: state.breakTime -1, initBreak: state.breakTime - 1};
       return newState
     },
     incrementSession(state){
-      const newState = {...state, session: state.session + 1};
+      const newState = {...state, session: state.session + 1, initSession: state.session + 1};
       return newState
     },
     decrementSession(state){
-      const newState = {...state, session: state.session -1};
+      const newState = {...state, session: state.session -1, initSession: state.session - 1};
       return newState
     },
     startTimer(state) {
@@ -36,9 +39,11 @@ export const pomodoroSlice = createSlice (
 
       if (newState.seconds < 0 && newState.session > 0) {
           newState.session -= 1;
-          newState.seconds = 10;
-      }else if(newState.session === 0 && newState.seconds === 0){
-        return {...newState, session: newState.breakTime}
+          newState.seconds = 5;
+      }else if(newState.session === 0 && newState.seconds === 0 && newState.name === "TIME TO WORK"){
+        return {...newState, name: "IT'S TIME TO REST", session: newState.initBreak}
+      }else if(newState.session === 0 && newState.seconds === 0 && newState.name === "IT'S TIME TO REST") {
+        return {...newState, name: "TIME TO WORK", session: newState.initSession}
       }else {
         return newState
       }
@@ -57,4 +62,4 @@ export const pomodoroSlice = createSlice (
 )
 
 export default pomodoroSlice.reducer;
-export const { incrementBreak, decrementBreak, incrementSession, decrementSession, startTimer, stopTimer, changeRunning } = pomodoroSlice.actions;
+export const { incrementBreak, decrementBreak, incrementSession, decrementSession, startTimer, stopTimer, changeRunning,  } = pomodoroSlice.actions;

@@ -4,7 +4,7 @@ import { incrementSession, decrementSession} from  '../Redux/PomodoroSlice'
 const UpdateTime = () => {
 
     const dispatch = useDispatch();
-    const session = useSelector(state => state.Pomodoro.session)
+    const session = useSelector(state => state.Pomodoro.initSession)
     return (
       <div id='session-container'>
         <h1 id='session-label'>Session Length</h1>
