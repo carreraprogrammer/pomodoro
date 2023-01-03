@@ -124,6 +124,7 @@ h1, h2, h3 {
   font-size: 3rem;
   margin-top: 24px;
   margin-bottom: 24px;
+  font-family: 'Lato', sans-serif;
 }
 
 #pomodoro-buttons {
