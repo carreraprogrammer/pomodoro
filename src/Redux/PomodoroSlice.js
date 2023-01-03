@@ -3,10 +3,10 @@
 import  { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  session: 2,
-  breakTime: 1,
-  initSession: 2,
-  initBreak: 1,
+  session: 25,
+  breakTime: 5,
+  initSession: 25,
+  initBreak: 5,
   seconds: 0,
   running: false,
   name: 'TIME TO WORK!',
