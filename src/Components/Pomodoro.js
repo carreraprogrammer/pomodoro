@@ -40,7 +40,7 @@ const Pomodoro = () => {
   
     return (
       <div id="pomodoro-container">
-        <h1>My sessions</h1>
+        <h1 id='title'>My sessions</h1>
         <div id='tomato-container'>
           {[...Array(counter)].map((_, i) => (
               <GiTomato style={{color: 'red'}}/>
