@@ -31,7 +31,7 @@
 
 
 
-# 📖 [Drum Machinne] <a name="about-project"></a>
+# 📖 [Pomodoro Tracker] <a name="about-project"></a>
 
 **[Pomodoro]** is a web application that simulates a pomodoro tracker. You can establish the time that you want to work and the time that you want to rest. Once your work time or your time to rest finish, you will hear a sound that indicates the change of session. As you increases your number of session, you'll have a visual interfaces that indicates your current number of sessions
 
