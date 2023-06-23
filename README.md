@@ -55,7 +55,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://carrera-drum-machine.netlify.app/)
+- [Live Demo Link](https://carreratimer.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
