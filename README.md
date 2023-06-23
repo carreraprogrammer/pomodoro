@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="https://github.com/carreraprogrammer/To-do-List/blob/master/carrera_logo.png?raw=true" alt="logo" width="140"  height="auto" />
   <br/>
 
 </div>
